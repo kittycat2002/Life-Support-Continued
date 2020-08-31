@@ -58,7 +58,8 @@ namespace LifeSupport {
         }
 
         public static void Patch_LayDown(ref Toil __result) {
-            Log.Message("Patch_LayDown");
+            bool debug = false;
+            if (debug) Log.Message("Patch_LayDown");
             Toil toil = __result;
             if (toil == null)
                 return;
