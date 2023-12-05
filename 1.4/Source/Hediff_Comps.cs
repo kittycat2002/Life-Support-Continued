@@ -13,7 +13,6 @@ namespace LifeSupport
 
         public override float SeverityChangePerDay()
         {
-            Log.Message($"{Pawn.health.hediffSet.HasHediff(LifeSupportDefOf.QE_LifeSupport)},{SeverityPerDayOnLifeSupport},{SeverityPerDayNotOnLifeSupport}");
             return Pawn.health.hediffSet.HasHediff(LifeSupportDefOf.QE_LifeSupport) ? SeverityPerDayOnLifeSupport : SeverityPerDayNotOnLifeSupport;
         }
     }
