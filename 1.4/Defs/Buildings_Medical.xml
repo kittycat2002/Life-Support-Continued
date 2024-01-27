@@ -48,8 +48,15 @@
                 <basePowerConsumption>200</basePowerConsumption>
             </li>
             <li Class="CompProperties_Flickable"/>
+            <li Class="CompProperties_Facility">
+                <maxSimultaneous>1</maxSimultaneous>
+                <mustBePlacedAdjacent>true</mustBePlacedAdjacent>
+            </li>
             <li Class="LifeSupport.CompProperties_LifeSupport"/>
         </comps>
+        <placeWorkers>
+            <li>PlaceWorker_ShowFacilitiesConnections</li>
+        </placeWorkers>
         <designationHotKey>Misc5</designationHotKey>
         <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
         <uiIconScale>0.85</uiIconScale>
