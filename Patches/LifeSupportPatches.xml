@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <!-- Patch any item that can support a Vitals Monitor to also support a Life Support System. -->
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities[./li[text()="VitalsMonitor"]] | /Defs/thingDef/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities[./li[text()="VitalsMonitor"]]</xpath>
+        <value>
+          <li>QE_LifeSupportSystem</li>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>
