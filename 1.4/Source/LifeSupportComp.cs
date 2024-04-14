@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -18,21 +18,25 @@ namespace LifeSupport {
             
             //Check for state change in surrounding pawns in beds.
             Map map = parent.Map;
-
-            foreach (var pawn in parent.CellsAdjacent8WayAndInside()
-                                       .SelectMany(cell => cell.GetThingList(map).Where(thing => thing is Building_Bed).SelectMany(thing => (thing as Building_Bed).CurOccupants))
-                                       .Where(pawn => !pawn.health.Dead)
-                                       .Distinct()) {
+            var pawns = parent.CellsAdjacent8WayAndInside()
+                                .SelectMany(cell => cell.GetThingList(map).OfType<Building_Bed>().SelectMany(bed => bed.CurOccupants))
+                                .Where(pawn => !pawn.health.Dead)
+                                .Distinct()
+                                .ToList();
+            
+            foreach (var pawn in pawns) {
                 LifeSupportUtility.SetHediffs(pawn);
             }
         }
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
-            foreach (var pawn in parent.CellsAdjacent8WayAndInside()
-                                       .SelectMany(cell => cell.GetThingList(previousMap).Where(thing => thing is Building_Bed).SelectMany(thing => (thing as Building_Bed).CurOccupants))
-                                       .Where(pawn => !pawn.health.Dead)
-                                       .Distinct())
-            {
+            var pawns = parent.CellsAdjacent8WayAndInside()
+                                .SelectMany(cell => cell.GetThingList(previousMap).OfType<Building_Bed>().SelectMany(bed => bed.CurOccupants))
+                                .Where(pawn => !pawn.health.Dead)
+                                .Distinct()
+                                .ToList();
+            
+            foreach (var pawn in pawns) {
                 LifeSupportUtility.SetHediffs(pawn, false);
             }
         }
