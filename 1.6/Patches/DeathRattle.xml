@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Death Rattle Continued [1.2+]</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<li Class="PatchOperationAttributeSet">
+					<xpath>/Defs/HediffDef[defName="IntestinalFailure"]/comps/li[@Class="HediffCompProperties_SeverityPerDay"]</xpath>
+					<attribute>Class</attribute>
+					<value>LifeSupport.HediffCompProperties_OnLifeSupport</value>
+				</li>
+				<li Class="PatchOperationSetName">
+					<xpath>/Defs/HediffDef[defName="IntestinalFailure"]/comps/li[@Class="LifeSupport.HediffCompProperties_OnLifeSupport"]/severityPerDay</xpath>
+					<name>severityPerDayNotOnLifeSupport</name>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="IntestinalFailure"]/comps/li[@Class="LifeSupport.HediffCompProperties_OnLifeSupport"]</xpath>
+					<value><severityPerDayOnLifeSupport>0</severityPerDayOnLifeSupport></value>
+				</li>
+				<li Class="PatchOperationAttributeSet">
+					<xpath>/Defs/HediffDef[defName="LiverFailure"]/comps/li[@Class="HediffCompProperties_SeverityPerDay"]</xpath>
+					<attribute>Class</attribute>
+					<value>LifeSupport.HediffCompProperties_OnLifeSupport</value>
+				</li>
+				<li Class="PatchOperationSetName">
+					<xpath>/Defs/HediffDef[defName="LiverFailure"]/comps/li[@Class="LifeSupport.HediffCompProperties_OnLifeSupport"]/severityPerDay</xpath>
+					<name>severityPerDayNotOnLifeSupport</name>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="LiverFailure"]/comps/li[@Class="LifeSupport.HediffCompProperties_OnLifeSupport"]</xpath>
+					<value><severityPerDayOnLifeSupport>0</severityPerDayOnLifeSupport></value>
+				</li>
+				<li Class="PatchOperationAttributeSet">
+					<xpath>/Defs/HediffDef[defName="KidneyFailure"]/comps/li[@Class="HediffCompProperties_SeverityPerDay"]</xpath>
+					<attribute>Class</attribute>
+					<value>LifeSupport.HediffCompProperties_OnLifeSupport</value>
+				</li>
+				<li Class="PatchOperationSetName">
+					<xpath>/Defs/HediffDef[defName="KidneyFailure"]/comps/li[@Class="LifeSupport.HediffCompProperties_OnLifeSupport"]/severityPerDay</xpath>
+					<name>severityPerDayNotOnLifeSupport</name>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="KidneyFailure"]/comps/li[@Class="LifeSupport.HediffCompProperties_OnLifeSupport"]</xpath>
+					<value><severityPerDayOnLifeSupport>0</severityPerDayOnLifeSupport></value>
+				</li>
+				<li Class="PatchOperationAttributeSet">
+					<xpath>/Defs/HediffDef[defName="ClinicalDeathNoHeartbeat"]/comps/li[@Class="HediffCompProperties_SeverityPerDay"]</xpath>
+					<attribute>Class</attribute>
+					<value>LifeSupport.HediffCompProperties_OnLifeSupport</value>
+				</li>
+				<li Class="PatchOperationSetName">
+					<xpath>/Defs/HediffDef[defName="ClinicalDeathNoHeartbeat"]/comps/li[@Class="LifeSupport.HediffCompProperties_OnLifeSupport"]/severityPerDay</xpath>
+					<name>severityPerDayNotOnLifeSupport</name>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="ClinicalDeathNoHeartbeat"]/comps/li[@Class="LifeSupport.HediffCompProperties_OnLifeSupport"]</xpath>
+					<value><severityPerDayOnLifeSupport>0</severityPerDayOnLifeSupport></value>
+				</li>
+				<li Class="PatchOperationAttributeSet">
+					<xpath>/Defs/HediffDef[defName="ClinicalDeathAsphyxiation"]/comps/li[@Class="HediffCompProperties_SeverityPerDay"]</xpath>
+					<attribute>Class</attribute>
+					<value>LifeSupport.HediffCompProperties_OnLifeSupport</value>
+				</li>
+				<li Class="PatchOperationSetName">
+					<xpath>/Defs/HediffDef[defName="ClinicalDeathAsphyxiation"]/comps/li[@Class="LifeSupport.HediffCompProperties_OnLifeSupport"]/severityPerDay</xpath>
+					<name>severityPerDayNotOnLifeSupport</name>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/HediffDef[defName="ClinicalDeathAsphyxiation"]/comps/li[@Class="LifeSupport.HediffCompProperties_OnLifeSupport"]</xpath>
+					<value><severityPerDayOnLifeSupport>0</severityPerDayOnLifeSupport></value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>
